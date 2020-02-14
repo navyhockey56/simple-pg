@@ -7,5 +7,4 @@ source 'https://rubygems.org' do
 
   gem 'dotenv', :group => :development
   gem 'pry', :group => :development
-  gem 'tty-prompt', :group => :development
 end
