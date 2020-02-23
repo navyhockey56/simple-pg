@@ -2,8 +2,6 @@
 
 require 'pg'
 
-# require_relative 'exceptions'
-
 module SimplePG
   class PostgresqlConnector
 

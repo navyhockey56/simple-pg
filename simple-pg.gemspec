@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.files        = Dir.glob("lib/**/*") + %w(README.md CHANGELOG.md)
   s.require_path = 'lib'
 
-  s.add_runtime_dependency 'bcrypt', '~> 3.0'
   s.add_runtime_dependency 'logger', '~> 1.0'
   s.add_runtime_dependency 'pg', '~> 1.0'
 end

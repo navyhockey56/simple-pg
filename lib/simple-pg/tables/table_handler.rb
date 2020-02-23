@@ -57,7 +57,8 @@ module SimplePG
       table.transform(hash_entity, columns: columns)
     end
 
-    def query(columns: nil, where: nil, order_by: default_order_by)
+    def query(table: nil, columns: nil, where: nil, order_by: default_order_by)
+      table ||= self.table
       columns ||= table.column_names
 
       results = handler.query(
@@ -71,16 +72,18 @@ module SimplePG
       results.map { |result| table.transform(result, columns: columns) }
     end
 
-    def query_column(column:, value:, operator: '=', columns: nil, order_by: nil)
+    def query_column(table: nil, column:, value:, operator: '=', columns: nil, order_by: nil)
       query(
+        table: table,
         columns: columns,
         where: { operator: operator, column: column, value: value },
         order_by: order_by
       )
     end
 
-    def query_by_id(id)
+    def query_by_id(id, table: nil)
       query_column(
+        table: table,
         column: 'id',
         value: id
       ).first
@@ -175,7 +178,7 @@ module SimplePG
       table = options[:table]
       raise 'You must provide a table to join with or a pre-existing join table' unless join_table || table
 
-      join_table ||= JoinTable.new([self.table, table])
+      join_table ||= JoinTable.new(self.table, table)
       transformation = options.fetch(:transformation, 'hash')
 
       results = handler.query(
