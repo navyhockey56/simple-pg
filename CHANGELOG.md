@@ -1,6 +1,6 @@
 # SimplePG Changelog
 
-Unreleased
+0.1.0 - 2020-02-23
 ---------------------
 * Removed: Unused dependency on `bcrpyt`.
 * Updated: `TableHandler#query` to allow passing in the table to run the query on as opposed to always using the table defined within the handler.
