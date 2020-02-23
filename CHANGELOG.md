@@ -1,5 +1,9 @@
 # SimplePG Changelog
 
+Unreleased
+---------------------
+* Removing unused exceptions.
+
 0.0.1 - 2020-02-14
 ---------------------
 * Basic CRUD on individual tables
