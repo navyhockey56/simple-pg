@@ -1,5 +1,5 @@
-# Data Master
-The Data Master is responsible for handling connections to the postgresql database. The DataMaster is meant to be used as a dependency; however, it also offers a console script that allows connection to the database.
+# Simple PG
+Simple PG is a gem for managing interractions with postgresql.
 
 ## Environment Setup
 The DataMaster needs to connect with Postgresql, as such, the following variables are required:
