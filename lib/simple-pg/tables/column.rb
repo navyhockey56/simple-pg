@@ -65,12 +65,6 @@ module SimplePG
           end
         end
       end
-
-      def self.validate_phone_number!
-        -> (number) do
-          raise SimplePG::Exceptions::InvalidColumnValue,'Invalid phone number' unless number.match(/^\d{10}$/)
-        end
-      end
     end
 
     attr_reader :name, :type, :modifiers, :mapper, :validators, :default
